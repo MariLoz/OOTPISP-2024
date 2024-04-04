@@ -2,16 +2,13 @@
 #include "Student.h"
 using namespace std;
 
-STUDENT NoName(STUDENT& s) {
+STUDENT NoName(const STUDENT& s) {
     char n[7] = "NoName";
     STUDENT temp(s);
     temp.SetName(n);
     return temp;
 }
 
-void View(STUDENT a) {
-    a.Show();
-}
 
 int main()
 {
@@ -22,7 +19,7 @@ int main()
     void (STUDENT:: * fptr) (const char*, int, bool);
     fptr = &STUDENT::Set;
 
-    STUDENT first(name, 3, 0);
+    STUDENT first(name, 3, false);
     STUDENT* pStudent;
     pStudent = &first;
     first.Show();
@@ -42,11 +39,8 @@ int main()
 
     cout << endl;
     pStudent->Show();
-    (pStudent->*fptr)(name2, 2, 1);    //pStudent->Set(name2, 2, 1);
+    (pStudent->*fptr)(name2, 2, true);    //pStudent->Set(name2, 2, 1);
     pStudent->Show();
-
-    cout << endl;
-    View(first);
 
     cout << endl;
 }

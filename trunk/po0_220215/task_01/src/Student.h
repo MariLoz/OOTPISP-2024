@@ -10,7 +10,7 @@ class STUDENT {
 public:
 	STUDENT();
 	STUDENT(const char* n, int k, bool s);
-	STUDENT(const STUDENT& p);
+	STUDENT& operator=(const STUDENT& p);
 	void Set(const char* n, int k, bool s);
 	void SetName(const char* n);
 	void SetKurs(int k);

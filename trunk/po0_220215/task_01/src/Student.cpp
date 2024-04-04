@@ -2,19 +2,28 @@
 #include <cstring>
 
 STUDENT::STUDENT() {
-	char n[6] = "Lesha";
-	Set(n, 1, false);
+	Set("Lesha", 1, false);
 	std::cout << "A parameterless constructor is called on an object " << this << std::endl;
 }
 STUDENT::STUDENT(const char* n, int k, bool s) {
 	Set(n, k, s);
 	std::cout << "A constructor with parameters is called on an object " << this << std::endl;
 }
-STUDENT::STUDENT(const STUDENT& p) {
-	strcpy(name, p.name);
-	this->kurs = p.kurs;
-	this->sex = p.sex;
-	std::cout << "The copy constructor is called on the object " << this << std::endl;
+//STUDENT::STUDENT(const STUDENT& p) {
+//	strcpy(name, p.name);
+//	SetKurs(p.kurs);
+//	SetSex(p.sex);
+//	std::cout << "The copy constructor is called on the object " << this << std::endl;
+//}
+STUDENT& STUDENT::operator=(const STUDENT& p) {
+	if (this != &p) { // Check for self-assignment
+		// Copy the data from 'other' to 'this'
+		std::strncpy(name, p.name, LNAME);
+		SetKurs(p.kurs);
+		SetSex(p.sex);
+		std::cout << "The copy constructor is called on the object " << this << std::endl;
+	}
+	return *this;
 }
 void STUDENT::Set(const char* n, int k, bool s) {
 	SetName(n);
