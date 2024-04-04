@@ -25,15 +25,15 @@ void STUDENT::Set(const char* n, int k, bool s) {
 }
 void STUDENT::SetName(const char* n) {
 	strcpy(name, n);
-	std::cout << "Changed name of thå object " << this << std::endl;
+	std::cout << "Changed name of thÐµ object " << this << std::endl;
 }
 void STUDENT::SetKurs(int k) {
 	this->kurs = k;
-	std::cout << "Changed course of thå object " << this << std::endl;
+	std::cout << "Changed course of thÐµ object " << this << std::endl;
 }
 void STUDENT::SetSex(bool s) {
 	this->sex = s;
-	std::cout << "Changed sex of thå object " << this << std::endl;
+	std::cout << "Changed sex of thÐµ object " << this << std::endl;
 }
 void STUDENT::Show() const {
 	std::cout << "name: " << name << ", course: " << kurs << ", sex: " << sex << std::endl;
