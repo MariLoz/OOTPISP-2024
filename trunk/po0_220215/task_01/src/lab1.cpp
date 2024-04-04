@@ -26,7 +26,7 @@ int main()
 
     cout << endl;
     pStudent->Show();
-    (pStudent->*fptr)("Masha", 2, true);    //pStudent->Set(name2, 2, 1);
+    (pStudent->*fptr)("Masha", 2, true);
     pStudent->Show();
 
     cout << endl;
