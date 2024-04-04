@@ -15,9 +15,9 @@ public:
 	void SetName(const char* n);
 	void SetKurs(int k);
 	void SetSex(bool s);
-	void Show();
+	void Show() const;
 	char* GetName();
-	int GetKurs();
-	bool GetSex();
+	int GetKurs() const;
+	bool GetSex() const;
 	~STUDENT();
 };

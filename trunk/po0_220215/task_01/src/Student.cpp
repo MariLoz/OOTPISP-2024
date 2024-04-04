@@ -3,7 +3,7 @@
 
 STUDENT::STUDENT() {
 	char n[6] = "Lesha";
-	Set(n, 1, 0);
+	Set(n, 1, false);
 	std::cout << "A parameterless constructor is called on an object " << this << std::endl;
 }
 STUDENT::STUDENT(const char* n, int k, bool s) {
@@ -33,19 +33,16 @@ void STUDENT::SetSex(bool s) {
 	this->sex = s;
 	std::cout << "Changed sex of thå object " << this << std::endl;
 }
-void STUDENT::Show() {
+void STUDENT::Show() const {
 	std::cout << "name: " << name << ", course: " << kurs << ", sex: " << sex << std::endl;
 }
-char* STUDENT::GetName()
-{
+char* STUDENT::GetName(){
 	return this->name;
 }
-int STUDENT::GetKurs()
-{
+int STUDENT::GetKurs() const{
 	return this->kurs;
 }
-bool STUDENT::GetSex()
-{
+bool STUDENT::GetSex() const{
 	return this->sex;
 }
 STUDENT::~STUDENT()
