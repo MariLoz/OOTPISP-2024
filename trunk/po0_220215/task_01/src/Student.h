@@ -1,12 +1,11 @@
 #pragma once
 #include <cstring>
 #include <iostream>
-//1.Определить пользовательский класс в соответствии с вариантом задания 
 const int LNAME = 100;
 class STUDENT {
-	char name[LNAME];//имя
-	int kurs;//курс
-	bool sex;//пол
+	char name[LNAME];//name
+	int kurs;//course
+	bool sex;//sex
 public:
 	STUDENT();
 	STUDENT(const char* n, int k, bool s);

@@ -4,8 +4,6 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "rus");
-
     void (STUDENT:: * fptr) (const char*, int, bool);
     fptr = &STUDENT::Set;
 
