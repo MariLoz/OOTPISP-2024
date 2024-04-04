@@ -3,41 +3,34 @@
 
 STUDENT::STUDENT() {
 	char n[6] = "Lesha";
-	strcpy(name, n);
-	kurs = 1;
-	sex = 0;
+	Set(n, 1, 0);
 	std::cout << "A parameterless constructor is called on an object " << this << std::endl;
 }
-STUDENT::STUDENT(char* n, int k, bool s) {
-	strcpy(name, n);
-	kurs = k;
-	sex = s;
+STUDENT::STUDENT(const char* n, int k, bool s) {
+	Set(n, k, s);
 	std::cout << "A constructor with parameters is called on an object " << this << std::endl;
 }
 STUDENT::STUDENT(const STUDENT& p) {
 	strcpy(name, p.name);
-	kurs = p.kurs;
-	sex = p.sex;
+	this->kurs = p.kurs;
+	this->sex = p.sex;
 	std::cout << "The copy constructor is called on the object " << this << std::endl;
 }
-void STUDENT::Set(char* n, int k, bool s) {
-	/*name = n;
-	kurs = k;
-	sex = s;*/
+void STUDENT::Set(const char* n, int k, bool s) {
 	SetName(n);
 	SetKurs(k);
 	SetSex(s);
 }
-void STUDENT::SetName(char* n) {
+void STUDENT::SetName(const char* n) {
 	strcpy(name, n);
 	std::cout << "Changed name of thå object " << this << std::endl;
 }
 void STUDENT::SetKurs(int k) {
-	kurs = k;
+	this->kurs = k;
 	std::cout << "Changed course of thå object " << this << std::endl;
 }
 void STUDENT::SetSex(bool s) {
-	sex = s;
+	this->sex = s;
 	std::cout << "Changed sex of thå object " << this << std::endl;
 }
 void STUDENT::Show() {
@@ -45,20 +38,20 @@ void STUDENT::Show() {
 }
 char* STUDENT::GetName()
 {
-	return name;
+	return this->name;
 }
 int STUDENT::GetKurs()
 {
-	return kurs;
+	return this->kurs;
 }
 bool STUDENT::GetSex()
 {
-	return sex;
+	return this->sex;
 }
 STUDENT::~STUDENT()
 {
 	std::cout << "\nDestructor called on object " << this << std::endl;
-	std::cout << "Student " << name << " deleted" << std::endl;
+	std::cout << "Student " << this->name << " deleted" << std::endl;
 }
 
 

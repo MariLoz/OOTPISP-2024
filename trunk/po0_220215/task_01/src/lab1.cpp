@@ -19,7 +19,7 @@ int main()
     char name[] = "Sasha";
     char name2[] = "Masha";
 
-    void (STUDENT:: * fptr) (char*, int, bool);
+    void (STUDENT:: * fptr) (const char*, int, bool);
     fptr = &STUDENT::Set;
 
     STUDENT first(name, 3, 0);

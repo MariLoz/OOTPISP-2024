@@ -9,10 +9,10 @@ class STUDENT {
 	bool sex;//пол
 public:
 	STUDENT();
-	STUDENT(char* n, int k, bool s);
+	STUDENT(const char* n, int k, bool s);
 	STUDENT(const STUDENT& p);
-	void Set(char* n, int k, bool s);
-	void SetName(char* n);
+	void Set(const char* n, int k, bool s);
+	void SetName(const char* n);
 	void SetKurs(int k);
 	void SetSex(bool s);
 	void Show();
