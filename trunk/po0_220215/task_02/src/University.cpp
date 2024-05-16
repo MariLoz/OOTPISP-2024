@@ -6,10 +6,11 @@ using namespace std;
 
 Person::Person() : Person("name") {}
 
-Person::Person(string_view name1) : name(name1), next(nullptr) {
+Person::Person(string_view name1) : name(name1) {
 	if (head == nullptr) {
 		head = this;
 	}
+	next = nullptr;
 	if (lastObject != nullptr) {
 		lastObject->setNext(this);
 	}
@@ -57,7 +58,7 @@ void Chair::printVirtual() {
 }
 void Chair::show() {
 	Person::show();
-	cout << "	- Number of Subordinates: " << numOfSubordinates << endl;
+	cout << "\t- Number of Subordinates: " << numOfSubordinates << endl;
 }
 
 
@@ -70,7 +71,7 @@ void Teacher::printVirtual() {
 }
 void Teacher::show() {
 	Person::show();
-	cout << "	- Work experience: " << workExperience << endl;
+	cout << "\t- Work experience: " << workExperience << endl;
 }
 
 
@@ -83,5 +84,5 @@ void Student::printVirtual() {
 }
 void Student::show() {
 	Person::show();
-	cout << "	- Average Grade: " << averageGrade << endl;
+	cout << "\t- Average Grade: " << averageGrade << endl;
 }
