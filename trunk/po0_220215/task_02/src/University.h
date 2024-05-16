@@ -11,7 +11,7 @@ public:
 	std::string name;
 	Person* next;
 	Person();
-	explicit Person(std::string name);
+	explicit Person(std::string_view name);
 	virtual ~Person() = default;
 
 	static void printHead();
@@ -29,7 +29,7 @@ public:
 
 class Student : public Person {
 public:
-	Student(std::string name, const int averageGrade);
+	Student(std::string_view name, const int averageGrade);
 	~Student() override = default;
 
 	void printVirtual() override;
@@ -43,7 +43,7 @@ private:
 
 class Teacher : public Person {
 public:
-	Teacher(std::string name, const int workExperience);
+	Teacher(std::string_view name, const int workExperience);
 	~Teacher() override = default;
 
 	void printVirtual() override;
@@ -56,7 +56,7 @@ private:
 
 class Chair : public Person {  //Chair eto zav kafedroy
 public:
-	Chair(std::string name, const int numOfSubordinates);
+	Chair(std::string_view name, const int numOfSubordinates);
 	~Chair() override = default;
 
 	void printVirtual() override;

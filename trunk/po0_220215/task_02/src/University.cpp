@@ -6,7 +6,7 @@ using namespace std;
 
 Person::Person() : Person("name") {}
 
-Person::Person(string name1) : name(name1), next(nullptr) {
+Person::Person(string_view name1) : name(name1), next(nullptr) {
 	if (head == nullptr) {
 		head = this;
 	}
@@ -49,7 +49,7 @@ Person* Person::lastObject = nullptr;
 
 
 
-Chair::Chair(const string name1, const int numOfSubordinates1)
+Chair::Chair(string_view name1, const int numOfSubordinates1)
 	: Person(name1), numOfSubordinates(numOfSubordinates1) {
 }
 void Chair::printVirtual() {
@@ -62,7 +62,7 @@ void Chair::show() {
 
 
 
-Teacher::Teacher(const string name1, const int workExperience1)
+Teacher::Teacher(string_view name1, const int workExperience1)
 	: Person(name1), workExperience(workExperience1) {
 }
 void Teacher::printVirtual() {
@@ -75,7 +75,7 @@ void Teacher::show() {
 
 
 
-Student::Student(const string name1, const int averageGrade1)
+Student::Student(string_view name1, const int averageGrade1)
 	: Person(name1), averageGrade(averageGrade1) {
 }
 void Student::printVirtual() {
