@@ -10,9 +10,9 @@
 Получить практические навыки создания иерархии классов и использования статических компонентов класса.
 
 
-### Конструкторы с параметрами:  ###
+### Конструкторы с параметрами: ###
 
-###     Базовый класс:  ###
+### Базовый класс: ###
 ```c++
 Person::Person(string name1) : name(name1), next(nullptr) {
 	if (head == nullptr) {
@@ -25,7 +25,7 @@ Person::Person(string name1) : name(name1), next(nullptr) {
 }
 
 ```
-###     Дочерние классы:  ###
+### Дочерние классы: ###
 ```c++
 Chair::Chair(string name1, const int numOfSubordinates1)
 	: Person(name1), numOfSubordinates(numOfSubordinates1) {
@@ -40,7 +40,7 @@ Student::Student(string name1, const int averageGrade1)
 }
 ```
 
-### Конструкторы без параметров базового класса  ###
+### Конструкторы без параметров базового класса ###
 ```c++
 Person::Person() : Person("name") {}
 ```
@@ -52,7 +52,7 @@ Person::Person() : Person("name") {}
     static Person* last;
 ```
 
-### Метод для просмотра списка  ###
+### Метод для просмотра списка ###
 ```c++
 void Person::printHead() {
 	Person* p = head;

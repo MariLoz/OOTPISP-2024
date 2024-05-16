@@ -49,7 +49,7 @@ Person* Person::lastObject = nullptr;
 
 
 
-Chair::Chair(string name1, const int numOfSubordinates1)
+Chair::Chair(const string name1, const int numOfSubordinates1)
 	: Person(name1), numOfSubordinates(numOfSubordinates1) {
 }
 void Chair::printVirtual() {
@@ -62,7 +62,7 @@ void Chair::show() {
 
 
 
-Teacher::Teacher(string name1, const int workExperience1)
+Teacher::Teacher(const string name1, const int workExperience1)
 	: Person(name1), workExperience(workExperience1) {
 }
 void Teacher::printVirtual() {
@@ -75,7 +75,7 @@ void Teacher::show() {
 
 
 
-Student::Student(string name1, const int averageGrade1)
+Student::Student(const string name1, const int averageGrade1)
 	: Person(name1), averageGrade(averageGrade1) {
 }
 void Student::printVirtual() {
