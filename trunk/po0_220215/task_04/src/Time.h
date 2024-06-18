@@ -38,6 +38,7 @@ public:
                 return is;
             }
             catch (const std::invalid_argument& e) {
+                throw std::invalid_argument("Invalid time format or out-of-range seconds");
             }
         }
 
@@ -48,8 +49,14 @@ public:
     }
 
     friend std::ostream& operator<<(std::ostream& os, const Time& time) {
-        os << std::setw(2) << std::setfill('0') << time.minutes << ":"
-            << std::setw(2) << std::setfill('0') << time.seconds;
+        if (time.minutes < 10) {
+            os << '0';
+        }
+        os << time.minutes << ":";
+        if (time.seconds < 10) {
+            os << '0';
+        }
+        os << time.seconds;
         return os;
     }
 
