@@ -8,6 +8,8 @@ public:
     virtual ~Error() = default;
     virtual void print() const;
 
+private:
+    std::string message; 
 protected:
-    std::string message;
+    const std::string& getMessage() const;
 };

@@ -4,6 +4,6 @@ MemoryAccessError::MemoryAccessError(const std::string& msg)
     : Error("Memory Access Error: " + msg) {}
 
 bool MemoryAccessError::operator==(const MemoryAccessError& other) const {
-    return message == other.message;
+    return getMessage() == other.getMessage();
 }
 

@@ -4,5 +4,5 @@ OverflowError::OverflowError()
     : MathError("Overflow error") {}
 
 bool OverflowError::operator==(const OverflowError& other) const {
-    return message == other.message;
+    return getMessage() == other.getMessage();
 }

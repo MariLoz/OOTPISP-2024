@@ -6,5 +6,7 @@ void Error::print() const {
     std::cout << "Error: " << message << std::endl;
 }
 
-
+const std::string& Error::getMessage() const {
+    return message;
+}
 
