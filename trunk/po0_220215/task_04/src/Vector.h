@@ -11,6 +11,9 @@ private:
 
 public:
     Vector() {
+        std::cout << "Vector default constructor called." << std::endl;
+    }
+    Vector(const Vector& other) : data(other.data) {
         std::cout << "Vector copy constructor called. Copying..." << std::endl;
     }
     Vector(size_t size, const Time& initialValue) : data(size, initialValue) {}
