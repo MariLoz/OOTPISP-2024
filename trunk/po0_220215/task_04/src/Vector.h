@@ -10,9 +10,9 @@ private:
     std::vector<Time> data;
 
 public:
-    Vector() {}
-
+    Vector() = default;
     Vector(size_t size, const Time& initialValue) : data(size, initialValue) {}
+    ~Vector() = default;
 
     Time& operator[](size_t index) {
         return data[index];
@@ -26,8 +26,8 @@ public:
         return data.size();
     }
 
-    void operator+(int value) {
-        for (auto& elem : data) {
+    friend void operator+(Vector& vec, int value) {
+        for (auto& elem : vec.data) {
             elem += value;
         }
     }
