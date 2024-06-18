@@ -5,11 +5,11 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("lab4")
+project ("OOTPlab4CMake")
 
-add_executable (CMakeProject1 "main.cpp" "Time.h" "Vector.h")
+add_executable (OOTPlab4CMake "main.cpp" "Time.h" "Vector.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
+  set_property(TARGET OOTPlab4CMake PROPERTY CXX_STANDARD 20)
 endif()
 
