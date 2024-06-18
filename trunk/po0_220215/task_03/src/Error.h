@@ -9,7 +9,6 @@ public:
     virtual void print() const;
     
     bool operator==(const Error& other) const;
-    bool operator!=(const Error& other) const;
 
 protected:
     std::string message;

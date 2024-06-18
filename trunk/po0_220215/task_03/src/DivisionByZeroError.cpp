@@ -4,9 +4,5 @@ DivisionByZeroError::DivisionByZeroError()
     : MathError("Division by zero") {}
 
 bool DivisionByZeroError::operator==(const DivisionByZeroError& other) const {
-    return this->message == other.message;
-}
-
-bool DivisionByZeroError::operator!=(const DivisionByZeroError& other) const {
-    return !(*this == other);
+    return message == other.message;
 }

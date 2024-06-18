@@ -10,7 +10,4 @@ bool Error::operator==(const Error& other) const {
     return message == other.message;
 }
 
-bool Error::operator!=(const Error& other) const {
-    return !(*this == other);
-}
 
