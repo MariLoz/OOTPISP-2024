@@ -6,8 +6,5 @@ void Error::print() const {
     std::cout << "Error: " << message << std::endl;
 }
 
-bool Error::operator==(const Error& other) const {
-    return message == other.message;
-}
 
 

@@ -3,6 +3,6 @@
 
 class MathError : public Error {
 public:
-    MathError(const std::string& msg);
+    explicit MathError(const std::string& msg);
     bool operator==(const MathError& other) const;
 };

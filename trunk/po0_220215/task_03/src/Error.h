@@ -5,10 +5,8 @@
 class Error {
 public:
     explicit Error(const std::string& message);
-
+    virtual ~Error() = default;
     virtual void print() const;
-    
-    bool operator==(const Error& other) const;
 
 protected:
     std::string message;

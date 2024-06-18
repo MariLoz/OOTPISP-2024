@@ -3,6 +3,6 @@
 
 class MemoryAccessError : public Error {
 public:
-    MemoryAccessError(const std::string& msg);
+    explicit MemoryAccessError(const std::string& msg);
     bool operator==(const MemoryAccessError& other) const;
 };
