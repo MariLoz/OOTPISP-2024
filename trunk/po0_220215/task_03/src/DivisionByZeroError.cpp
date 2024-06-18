@@ -10,10 +10,3 @@ bool DivisionByZeroError::operator==(const DivisionByZeroError& other) const {
 bool DivisionByZeroError::operator!=(const DivisionByZeroError& other) const {
     return !(*this == other);
 }
-
-DivisionByZeroError& DivisionByZeroError::operator=(const DivisionByZeroError& other) {
-    if (this != &other) {
-        message = other.message;
-    }
-    return *this;
-}

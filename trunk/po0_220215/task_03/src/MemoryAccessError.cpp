@@ -11,9 +11,3 @@ bool MemoryAccessError::operator!=(const MemoryAccessError& other) const {
     return !(*this == other);
 }
 
-MemoryAccessError& MemoryAccessError::operator=(const MemoryAccessError& other) {
-    if (this != &other) {
-        message = other.message;
-    }
-    return *this;
-}

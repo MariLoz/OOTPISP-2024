@@ -14,9 +14,3 @@ Error* ErrorCollection::operator[](size_t index) {
 size_t ErrorCollection::size() const {
     return errors.size();
 }
-
-ErrorCollection::~ErrorCollection() {
-    for (Error* err : errors) {
-        delete err;
-    }
-}

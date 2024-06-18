@@ -11,9 +11,4 @@ bool MathError::operator!=(const MathError& other) const {
     return !(*this == other);
 }
 
-MathError& MathError::operator=(const MathError& other) {
-    if (this != &other) {
-        message = other.message;
-    }
-    return *this;
-}
+
