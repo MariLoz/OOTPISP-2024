@@ -12,7 +12,9 @@ private:
 public:
     Vector() = default;
     Vector(size_t size, const Time& initialValue) : data(size, initialValue) {}
-    ~Vector() = default;
+    ~Vector() {
+        std::cout << "Vector destructor called. Cleaning up..." << std::endl;
+    }
 
     Time& operator[](size_t index) {
         return data[index];
