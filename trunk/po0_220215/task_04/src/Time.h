@@ -27,8 +27,7 @@ public:
         std::string input;
         is >> input;
 
-        size_t pos = input.find(':');
-        if (pos != std::string::npos) {
+        if (size_t pos = input.find(':'); pos != std::string::npos) {
             try {
                 int m = std::stoi(input.substr(0, pos));
                 int s = std::stoi(input.substr(pos + 1));
@@ -37,7 +36,7 @@ public:
                 time.normalize();
                 return is;
             }
-            catch (const std::invalid_argument& e) {
+            catch (const std::invalid_argument&) {
                 throw std::invalid_argument("Invalid time format or out-of-range seconds");
             }
         }
