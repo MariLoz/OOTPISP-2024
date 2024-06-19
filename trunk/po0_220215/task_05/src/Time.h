@@ -39,9 +39,7 @@ public:
         return Time(newMinutes, newSeconds);
     }
 
-    friend bool operator==(const Time& lhs, const Time& rhs) {
-        return lhs.minutes == rhs.minutes && lhs.seconds == rhs.seconds;
-    }
+    friend bool operator==(const Time& lhs, const Time& rhs) = default;
 
     auto operator<=>(const Time& other) const = default;
 
