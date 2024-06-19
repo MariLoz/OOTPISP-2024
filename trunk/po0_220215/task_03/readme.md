@@ -20,7 +20,7 @@
 - `ErrorCollection.h` и `ErrorCollection.cpp`: класс для хранения коллекции ошибок.
 - `main.cpp`: демонстрационная программа, показывающая работу с классами ошибок и коллекцией ошибок.
 
-### Обработка исключения в Error* operator[](size_t index)###
+### Обработка исключения в Error* operator[](size_t index) ###
 ```c++
 Error* ErrorCollection::operator[](size_t index) {
     if (index >= errors.size()) {
@@ -29,27 +29,27 @@ Error* ErrorCollection::operator[](size_t index) {
     return errors[index];
 }
 ```
-### Перегрузка операторов класса MemoryAccessError###
+### Перегрузка операторов класса MemoryAccessError ###
 ```c++
 bool MemoryAccessError::operator==(const MemoryAccessError& other) const {
     return this->message == other.message;
 }
 ```
-### Перегрузка операторов класса MathError###
+### Перегрузка операторов класса MathError ###
 ```c++
 bool MathError::operator==(const MathError& other) const {
     return this->message == other.message;
 }
 
 ```
-### Перегрузка операторов класса DivisionByZeroError###
+### Перегрузка операторов класса DivisionByZeroError ###
 ```c++
 bool DivisionByZeroError::operator==(const DivisionByZeroError& other) const {
     return this->message == other.message;
 }
 
 ```
-### Перегрузка операторов класса OverflowError###
+### Перегрузка операторов класса OverflowError ###
 ```c++
 bool OverflowError::operator==(const OverflowError& other) const {
     return this->message == other.message;
