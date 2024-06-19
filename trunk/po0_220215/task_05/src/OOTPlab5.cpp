@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 #include <algorithm>
+
 #include "Time.h"
 #include "Vector.h"
 #include "SVector.h"
@@ -11,7 +12,7 @@ using namespace std;
 template <typename T>
 void findMaxAndAddToBeginning(vector<T>& vec) {
     if (!vec.empty()) {
-        auto maxIt = std::max_element(vec.begin(), vec.end());
+        auto maxIt = std::ranges::max_element(vec);
         if (maxIt != vec.end()) {
             vec.insert(vec.begin(), *maxIt);
         }
@@ -21,7 +22,7 @@ void findMaxAndAddToBeginning(vector<T>& vec) {
 template <typename T>
 void removeMinElement(vector<T>& vec) {
     if (!vec.empty()) {
-        auto minIt = min_element(vec.begin(), vec.end());
+        auto minIt = std::ranges::min_element(vec);
         T minValue = *minIt;
         vec.erase(minIt);
     }
@@ -43,7 +44,7 @@ void addAverageToElements(vector<T>& vec) {
 }
 
 template <typename T>
-void show(vector<T>&vec) {
+void show(vector<T>& vec) {
     cout << "Elements:\n";
     for (const auto& elem : vec) {
         cout << elem << " ";
