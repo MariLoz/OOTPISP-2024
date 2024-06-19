@@ -43,18 +43,7 @@ public:
         return lhs.minutes == rhs.minutes && lhs.seconds == rhs.seconds;
     }
 
-    friend bool operator<(const Time& lhs, const Time& rhs) {
-        return lhs.minutes < rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds < rhs.seconds);
-    }
-    friend bool operator<=(const Time& lhs, const Time& rhs) {
-        return lhs.minutes < rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds <= rhs.seconds);
-    }
-    friend bool operator>(const Time& lhs, const Time& rhs) {
-        return lhs.minutes > rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds > rhs.seconds);
-    }
-    friend bool operator>=(const Time& lhs, const Time& rhs) {
-        return lhs.minutes > rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds >= rhs.seconds);
-    }
+    auto operator<=>(const Time& other) const = default;
 
     friend std::istream& operator>>(std::istream& is, Time& time) {
         std::string input;
