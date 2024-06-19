@@ -39,8 +39,6 @@ public:
         return Time(newMinutes, newSeconds);
     }
 
-    friend bool operator==(const Time& lhs, const Time& rhs) = default;
-
     auto operator<=>(const Time& other) const = default;
 
     friend std::istream& operator>>(std::istream& is, Time& time) {
