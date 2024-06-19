@@ -23,7 +23,6 @@ template <typename T>
 void removeMinElement(vector<T>& vec) {
     if (!vec.empty()) {
         auto minIt = std::ranges::min_element(vec);
-        T minValue = *minIt;
         vec.erase(minIt);
     }
 }
@@ -35,7 +34,7 @@ void addAverageToElements(vector<T>& vec) {
         for (const auto& elem : vec) {
             sum += elem;
         }
-        T average = sum / vec.size();
+        T average = sum / (double)vec.size();
 
         for (auto& elem : vec) {
             elem += average;
@@ -128,7 +127,7 @@ void addAverageToElements(stack<T>& s) {
         while (!temp.empty()) {
             current = temp.top();
             temp.pop();
-            current += (average);
+            current += average;
             s.push(current);
         }
     }
@@ -148,7 +147,7 @@ void show(stack<T>& s) {
 
 int main() {
     cout << "Task 1\n";
-    vector<double> d_vector = { 3.14, 2.718, 1.414, 1.732, 5.015 };
+    vector<double> d_vector = { 3.18, 2.482, 5.252, 1.337, 5.049 };
     findMaxAndAddToBeginning(d_vector);
     removeMinElement(d_vector);
     addAverageToElements(d_vector);

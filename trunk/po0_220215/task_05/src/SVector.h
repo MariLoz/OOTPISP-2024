@@ -8,7 +8,7 @@ template<typename T>
 class SVector {
 private:
     std::stack<T> stack;
-    std::stack<T> temp;
+    std::stack<T> tempStack;
 
 public:
     void Add(const T& element) {
@@ -18,13 +18,13 @@ public:
     void findMaxAndAddToBeginning() {
         if (!stack.empty()) {
             T maxElement = stack.top();
-            temp.push(maxElement);
+            tempStack.push(maxElement);
             stack.pop();
 
             while (!stack.empty()) {
                 T current = stack.top();
                 stack.pop();
-                temp.push(current);
+                tempStack.push(current);
                 if (maxElement < current) {
                     maxElement = current;
                 }
@@ -32,9 +32,9 @@ public:
 
             stack.push(maxElement);
 
-            while (!temp.empty()) {
-                stack.push(temp.top());
-                temp.pop();
+            while (!tempStack.empty()) {
+                stack.push(tempStack.top());
+                tempStack.pop();
             }
         }
     }
@@ -43,7 +43,7 @@ public:
         if (!stack.empty()) {
             T min = stack.top();
             stack.pop();
-            temp.push(min);
+            tempStack.push(min);
 
             while (!stack.empty()) {
                 T current = stack.top();
@@ -51,14 +51,14 @@ public:
                 if (current < min) {
                     min = current;
                 }
-                temp.push(current);
+                tempStack.push(current);
             }
 
-            while (!temp.empty()) {
-                if (!(temp.top() == min)) {
-                    stack.push(temp.top());
+            while (!tempStack.empty()) {
+                if (!(tempStack.top() == min)) {
+                    stack.push(tempStack.top());
                 }
-                temp.pop();
+                tempStack.pop();
             }
         }
     }
@@ -67,24 +67,24 @@ public:
         if (!stack.empty()) {
             T sum = T();
             int count = 0;
-            temp = stack;
+            tempStack = stack;
 
-            while (!temp.empty()) {
-                sum += temp.top();
-                temp.pop();
+            while (!tempStack.empty()) {
+                sum += tempStack.top();
+                tempStack.pop();
                 ++count;
             }
 
             T average = sum / count;
 
-            temp = stack;
+            tempStack = stack;
             while (!stack.empty()) {
                 stack.pop();
             }
-            while (!temp.empty()) {
-                T& elem = temp.top();
+            while (!tempStack.empty()) {
+                T& elem = tempStack.top();
                 elem += average;
-                temp.pop();
+                tempStack.pop();
                 stack.push(elem);
             }
         }
@@ -92,11 +92,11 @@ public:
 
     void show() const {
         std::cout << "Elements:\n";
-        std::stack<T> temp = stack;
+        std::stack<T> tempSt = stack;
 
-        while (!temp.empty()) {
-            std::cout << temp.top() << " ";
-            temp.pop();
+        while (!tempSt.empty()) {
+            std::cout << tempSt.top() << " ";
+            tempSt.pop();
         }
         std::cout << std::endl;
     }
