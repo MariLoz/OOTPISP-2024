@@ -34,7 +34,7 @@ void addAverageToElements(vector<T>& vec) {
         for (const auto& elem : vec) {
             sum += elem;
         }
-        T average = sum / (double)vec.size();
+        T average = sum / (int)vec.size();
 
         for (auto& elem : vec) {
             elem += average;

@@ -29,8 +29,8 @@ public:
         seconds = totalSeconds % 60;
     }
 
-    Time operator/(int num) {
-        int totalSeconds = minutes * 60 + seconds;
+    friend Time operator/(Time t, int num) {
+        int totalSeconds = t.minutes * 60 + t.seconds;
         if (num != 0) {
             totalSeconds /= num;
         }

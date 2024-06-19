@@ -30,7 +30,6 @@ public:
     void removeMinElement() {
         if (!data.empty()) {
             auto minIt = std::ranges::min_element(data);
-            T minValue = *minIt;
             data.erase(minIt);
         }
     }
@@ -41,7 +40,7 @@ public:
             for (const auto& elem : data) {
                 sum += elem;
             }
-            T average = sum / data.size();
+            T average = sum / (int)data.size();
 
             for (auto& elem : data) {
                 elem += average;
