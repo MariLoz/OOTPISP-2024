@@ -10,7 +10,8 @@ private:
     std::vector<T> data;
 
 public:
-    Vector() {}
+    Vector() = default;
+    ~Vector() = default;
 
     void fillContainer(const std::vector<T>& elements) {
         data = elements;
@@ -18,7 +19,7 @@ public:
 
     void findMaxAndAddToBeginning() {
         if (!data.empty()) {
-            auto maxElement = std::max_element(data.begin(), data.end());
+            auto maxElement = std::ranges::max_element(data);
             if (maxElement != data.end()) {
                 T maxValue = *maxElement;
                 data.insert(data.begin(), maxValue);
@@ -28,7 +29,7 @@ public:
 
     void removeMinElement() {
         if (!data.empty()) {
-            auto minIt = min_element(data.begin(), data.end());
+            auto minIt = std::ranges::min_element(data);
             T minValue = *minIt;
             data.erase(minIt);
         }

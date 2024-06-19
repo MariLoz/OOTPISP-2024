@@ -44,7 +44,7 @@ void addAverageToElements(vector<T>& vec) {
 }
 
 template <typename T>
-void show(vector<T>& vec) {
+void show(vector<T>&vec) {
     cout << "Elements:\n";
     for (const auto& elem : vec) {
         cout << elem << " ";

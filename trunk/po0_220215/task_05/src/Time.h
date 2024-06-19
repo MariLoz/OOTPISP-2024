@@ -31,7 +31,9 @@ public:
 
     Time operator/(int num) {
         int totalSeconds = minutes * 60 + seconds;
-        totalSeconds /= num;
+        if (num != 0) {
+            totalSeconds /= num;
+        }
         int newMinutes = totalSeconds / 60;
         int newSeconds = totalSeconds % 60;
         return Time(newMinutes, newSeconds);
@@ -43,6 +45,15 @@ public:
 
     friend bool operator<(const Time& lhs, const Time& rhs) {
         return lhs.minutes < rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds < rhs.seconds);
+    }
+    friend bool operator<=(const Time& lhs, const Time& rhs) {
+        return lhs.minutes < rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds <= rhs.seconds);
+    }
+    friend bool operator>(const Time& lhs, const Time& rhs) {
+        return lhs.minutes > rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds > rhs.seconds);
+    }
+    friend bool operator>=(const Time& lhs, const Time& rhs) {
+        return lhs.minutes > rhs.minutes || (lhs.minutes == rhs.minutes && lhs.seconds >= rhs.seconds);
     }
 
     friend std::istream& operator>>(std::istream& is, Time& time) {
